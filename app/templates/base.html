@@ -1,0 +1,44 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ 
+ <head>
+ 
+   <meta charset="utf-8" />
+   <link rel="icon" type="image/png" href="/static/img/icon.png">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+   <title>
+     {%block title%}{%endblock title%}
+   </title>
+ 
+   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+   <!--     Fonts and icons     -->
+   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  
+   <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/material-dashboard.css')}}" />
+   <!-- Specific Page CSS goes HERE  -->
+   {% block styles %}
+   {% endblock styles %}
+ 
+ </head>
+ 
+ <body class="">
+ 
+  {%block navbar%}
+  {%endblock navbar%}
+    <!-- End Navbar -->
+  <div class="content">
+  {% block content %}{% endblock content %}
+  </div>
+
+   <script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
+   <script src="{{url_for('static',filename='js/popper.min.js')}}"></script>
+   <script src="{{url_for('static',filename='js/bootstrap-material-design.min.js')}}"></script>
+   <!-- Specific Page JS goes HERE  -->
+   {% block scripts %}
+   
+   {% endblock scripts %}
+   
+ </body>
+ </html>
+ 
