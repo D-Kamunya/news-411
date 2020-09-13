@@ -16,16 +16,20 @@
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   
    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/material-dashboard.css')}}" />
+   <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
    <!-- Specific Page CSS goes HERE  -->
-   {% block styles %}
-   {% endblock styles %}
+   {% block styles%}
+   {% endblock styles%}
  
  </head>
  
- <body class="">
- 
+ <body class="body">
+ <div class="header">
   {%block navbar%}
+  {% include 'navbar.html' %}
   {%endblock navbar%}
+ </div>
+
     <!-- End Navbar -->
   <div class="content">
   {% block content %}{% endblock content %}
@@ -36,7 +40,7 @@
    <script src="{{url_for('static',filename='js/bootstrap-material-design.min.js')}}"></script>
    <!-- Specific Page JS goes HERE  -->
    {% block scripts %}
-   
+   <script src="{{url_for('static',filename='js/base.js')}}"></script>
    {% endblock scripts %}
    
  </body>

@@ -1,0 +1,26 @@
+.body{
+ min-height: 200vh;
+}
+.header{
+  background: url("../img/bg.jpg")no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 80vh;
+}
+.navbar{
+  background-color: transparent;
+  border: none;
+  color:#000;
+  z-index: 100;
+  transition: background-color 1s ease 0s;
+}
+.navbar a{
+  letter-spacing: 2px;
+  font-weight: bold;
+  font-size: 25px;
+}
+.navbar.solid {
+  background-color: purple;
+  transition: background-color 1s ease 0s;
+  box-shadow: 0 0 4px grey;
+}
