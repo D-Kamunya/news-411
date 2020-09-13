@@ -4,6 +4,8 @@ import urllib.request,json
 # Getting news api key
 api_key = app.config['NEWS_API_KEY']
 
+# Getting the top headlines url
+sources_url = app.config["NEWS_API_HEADLINES_URL"]
 # Getting the sources url
 sources_url = app.config["NEWS_API_SOURCES_URL"]
 # Getting headlines by source name url
