@@ -1,5 +1,6 @@
 from flask import render_template
 from app import app
+from .requests import get_sources,get_top_headlines
 
 # Views
 @app.route('/')
@@ -8,7 +9,9 @@ def index():
     '''
     View root page function that returns the index page and its data
     '''
-    return render_template('index.html')
+    news_sources = get_sources()
+    top_headlines=get_top_headlines()[0:15]
+    return render_template('index.html',sources = news_sources,headlines = top_headlines)
 
 
 @app.route('/category/<category_name>')
