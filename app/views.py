@@ -1,6 +1,6 @@
 from flask import render_template
 from app import app
-from .requests import get_sources,get_top_headlines,get_source_news
+from .requests import get_sources,get_top_headlines,get_source_news,get_category_news
 
 # Views
 @app.route('/')
@@ -20,7 +20,9 @@ def category_news(category_name):
     '''
     View category news page function that returns the category-news page and its data for the category selected
     '''
-    return render_template('category-news.html',category_name=category_name)    
+    articles=get_category_news(category_name)
+    print(articles)
+    return render_template('category-news.html',category_name=category_name,articles=articles)    
 
 
 @app.route('/source/<source_id>')
