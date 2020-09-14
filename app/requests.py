@@ -83,6 +83,28 @@ def get_top_headlines():
     return headlines_results
 
 
+
+def get_source_news(source_id):
+    '''
+    Function that gets the json response (i.e top headlines news by sources selected) to our url request
+    '''
+    get_source_news_url = headlines_by_source_url.format(source_id,api_key)
+
+    with urllib.request.urlopen(get_source_news_url) as url:
+        source_news_data = url.read()
+        source_news_response = json.loads(source_news_data)
+
+        source_news_results = None
+
+        if source_news_response['articles']:
+            source_news_list =source_news_response['articles']
+            source_news_results = process_articles(source_news_list)
+            
+    return source_news_results
+
+
+
+
 def process_articles(articles_list):
     '''
     Function  that processes the articles result and transform them to a list of Objects
