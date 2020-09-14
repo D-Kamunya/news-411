@@ -53,5 +53,9 @@
 .blockquote-footer {
   font-size: 100%;
 }
+.source-title{
+  text-transform: uppercase; 
+  font-family: 'Helvetica Neue 45 Light', cursive;
+}
 
 

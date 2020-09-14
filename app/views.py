@@ -1,6 +1,6 @@
 from flask import render_template
 from app import app
-from .requests import get_sources,get_top_headlines
+from .requests import get_sources,get_top_headlines,get_source_news
 
 # Views
 @app.route('/')
@@ -29,4 +29,5 @@ def source_news(source_id):
     '''
     View source news page function that returns the source-news page and its data for the source selected
     '''
-    return render_template('source-news.html')        
+    source_articles=get_source_news(source_id)
+    return render_template('source-news.html',articles=source_articles,source=source_id)        
