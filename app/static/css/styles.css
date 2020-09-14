@@ -1,26 +1,54 @@
 .body{
- min-height: 200vh;
+ font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+ font-weight: normal;
+ min-height: 100vh;
+ text-align: center;
+ box-sizing: border-box;
 }
 .header{
   background: url("../img/bg.jpg")no-repeat center center;
   background-size: cover;
-  background-attachment: fixed;
   min-height: 80vh;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: block;
+  font-size: 100%;
+}
+.wrap{
+  font: 22px 'opensans-bold', sans-serif;
+  display: block;
+  width: 100%;
+  text-transform: uppercase;
+  margin: 0 auto;
 }
 .navbar{
   background-color: transparent;
   border: none;
-  color:#000;
-  z-index: 100;
+  color:#fff;
   transition: background-color 1s ease 0s;
+}
+.navbar.solid {
+  background-color: #a4508b;
+  background-image: linear-gradient(326deg, #a4508b 0%, #5f0a87 74%);
+  transition: background-color 1s ease 0s;
+  box-shadow: 0 0 4px grey;
+  -webkit-transition: background-color 1s ease 0s;
+  -moz-transition: background-color 1s ease 0s;
+  -ms-transition: background-color 1s ease 0s;
+  -o-transition: background-color 1s ease 0s;
 }
 .navbar a{
   letter-spacing: 2px;
   font-weight: bold;
   font-size: 25px;
 }
-.navbar.solid {
-  background-color: purple;
-  transition: background-color 1s ease 0s;
-  box-shadow: 0 0 4px grey;
+.list-group-item {
+  position: relative;
+  display: block;
+  padding: .75rem 1.25rem;
+  margin-bottom: -1px;
+  border-bottom: 1px solid rgba(0,0,0,.125);
 }
+
+
