@@ -103,6 +103,25 @@ def get_source_news(source_id):
     return source_news_results
 
 
+def get_category_news(category_name):
+    '''
+    Function that gets the json response (i.e top headlines news by category selected) to our url request
+    '''
+    get_category_news_url = headlines_by_category_url.format(category_name,api_key)
+
+    with urllib.request.urlopen(get_category_news_url) as url:
+        category_news_data = url.read()
+        category_news_response = json.loads(category_news_data)
+
+        category_news_results = None
+
+        if category_news_response['articles']:
+            category_news_list =category_news_response['articles']
+            category_news_results = process_articles(category_news_list)
+            
+    return category_news_results
+
+
 
 
 def process_articles(articles_list):
