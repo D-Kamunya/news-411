@@ -1,25 +1,30 @@
-from app import app
 import urllib.request,json
-from .models import source
-from .models import article
-
-Source = source.Source
-
-Article = article.Article
+from .models import Source
+from .models import Article
 
 # Getting news api key
-api_key = app.config['NEWS_API_KEY']
+api_key = None
 
 # Getting the top headlines url
-top_headlines_url = app.config["NEWS_API_HEADLINES_URL"]
+top_headlines_url = None
 # Getting the sources url
-sources_url = app.config["NEWS_API_SOURCES_URL"]
+sources_url = None
 # Getting headlines by source name url
-headlines_by_source_url= app.config["NEWS_API_HEADLINES_BY_SOURCE_URL"]
+headlines_by_source_url= None
 # Getting headlines by search name url
-headlines_by_search_url=app.config["NEWS_API_HEADLINES_BY_SEARCH_URL"]
+headlines_by_search_url= None
 #Getting headlines by category name url
-headlines_by_category_url=app.config["NEWS_API_HEADLINES_BY_CATEGORY_URL"]
+headlines_by_category_url= None
+
+
+def configure_request(app):
+    global api_key,top_headlines_url,sources_url,headlines_by_source_url,headlines_by_search_url,headlines_by_category_url 
+    api_key = app.config['NEWS_API_KEY']
+    top_headlines_url = app.config["NEWS_API_HEADLINES_URL"]
+    sources_url = app.config["NEWS_API_SOURCES_URL"]
+    headlines_by_source_url= app.config["NEWS_API_HEADLINES_BY_SOURCE_URL"]
+    headlines_by_search_url=app.config["NEWS_API_HEADLINES_BY_SEARCH_URL"]
+    headlines_by_category_url=app.config["NEWS_API_HEADLINES_BY_CATEGORY_URL"]
 
 def get_sources():
     '''

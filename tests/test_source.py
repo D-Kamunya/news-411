@@ -1,6 +1,6 @@
 import unittest
-from app.models import source
-Source = source.Source
+from app.models import Source
+
 
 class SourceTest(unittest.TestCase):
     '''
@@ -16,6 +16,3 @@ class SourceTest(unittest.TestCase):
     def test_instance(self):
         self.assertTrue(isinstance(self.new_source,Source))
 
-
-if __name__ == '__main__':
-    unittest.main()

@@ -1,9 +1,9 @@
 from flask import render_template,request,redirect,url_for
-from app import app
-from .requests import get_sources,get_top_headlines,get_source_news,get_category_news,search_news
+from . import main
+from ..requests import get_sources,get_top_headlines,get_source_news,get_category_news,search_news
 
 # Views
-@app.route('/')
+@main.route('/')
 def index():
 
     '''
@@ -14,12 +14,12 @@ def index():
 
     search_article = request.args.get('news_query')
     if search_article:
-        return redirect(url_for('search',news_article=search_article))
+        return redirect(url_for('.search',news_article=search_article))
     else:    
         return render_template('index.html',sources = news_sources,headlines = top_headlines)
 
 
-@app.route('/category/<category_name>')
+@main.route('/category/<category_name>')
 def category_news(category_name):
 
     '''
@@ -32,7 +32,7 @@ def category_news(category_name):
         return render_template('errors.html',error='article(s)')           
 
 
-@app.route('/source/<source_id>')
+@main.route('/source/<source_id>')
 def source_news(source_id):
 
     '''
@@ -44,7 +44,7 @@ def source_news(source_id):
     else:
         return render_template('errors.html',error='source articles')
 
-@app.route('/search/<news_article>')
+@main.route('/search/<news_article>')
 def search(news_article):
     '''
     View function to display the search results

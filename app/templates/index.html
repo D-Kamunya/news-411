@@ -12,7 +12,7 @@
       <h4 class="display-4 text-center mb-3"><strong>News Sources  <i class="fa fa-sort-alpha-asc" aria-hidden="true"></i></strong></h4>
       <div class="list-group list-group-flush">
         {% for source in sources %}
-        <a href="{{url_for('source_news',source_id=source.id)}}" class="list-group-item list-group-item-action">{{source.name}}</a>
+        <a href="{{url_for('.source_news',source_id=source.id)}}" class="list-group-item list-group-item-action">{{source.name}}</a>
         {%endfor%}
       </div>
     </div>

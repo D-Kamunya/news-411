@@ -1,7 +1,7 @@
 from flask import render_template
-from app import app
+from . import main
 
-@app.errorhandler(403)
+@main.errorhandler(403)
 def forbidden_access(error):
     '''
     Function to handles 403 error ie forbidden access
@@ -9,7 +9,7 @@ def forbidden_access(error):
     return render_template('errors.html',error='page')
 
 
-@app.errorhandler(404)
+@main.errorhandler(404)
 def four_Ow_four(error):
     '''
     Function to handles 404 error ie page not found
@@ -17,7 +17,7 @@ def four_Ow_four(error):
     return render_template('errors.html',error='page')
 
 
-@app.errorhandler(500)
+@main.errorhandler(500)
 def server_error(error):
     '''
     Function to handles 500 error ie server error
