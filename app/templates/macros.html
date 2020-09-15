@@ -51,7 +51,7 @@
           <!-- Title -->
           <h3 class="card-title mb-1"><strong>{{article.title}}</strong></h3>
          <!-- Text -->
-          <p class="card-text">{{article.description  | truncate(120)}} </p>
+          <p class="card-text">{{article.description }} </p>
           <footer class="blockquote-footer">By <cite title="Source Title">{{article.author}}</cite>, {{article.published_at[:10]}}</footer>
           <a href="{{article.url}}"><button class="btn btn-primary">Read more...</button></a>
         </div>

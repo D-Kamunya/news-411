@@ -3,7 +3,24 @@
 
 {%block content%}
 <div class="container-fluid ml-1 mr-0 mt-4">
-<h4 class="text-center display-4 mb-3"><strong>Trending {{category_name.title()}} News <i class="fa fa-briefcase" aria-hidden="true"></i></strong></h4>
+<h4 class="text-center display-4 mb-3"><strong>Top {{category_name.title()}} World News Headlines 
+  {% if category_name=='business'%}
+    <i class="fa fa-briefcase" aria-hidden="true"></i>
+  {%elif category_name=='entertainment'%}
+    <i class="fa fa-music" aria-hidden="true"></i>
+  {%elif category_name=='general'%}
+    <i class="fa fa-globe" aria-hidden="true"></i>
+  {%elif category_name=='health'%}
+    <i class="fa fa-heartbeat" aria-hidden="true"></i>
+  {%elif category_name=='science'%}
+    <i class="fa fa-flask" aria-hidden="true"></i>
+  {%elif category_name=='sports'%}
+    <i class="fa fa-futbol-o" aria-hidden="true"></i>
+  {%elif category_name=='technology'%}
+    <i class="fa fa-microchip" aria-hidden="true"></i>
+  {% endif %}  
+  </strong>
+</h4>
   <div class="row">
     {{macro.displayArticleList(articles)}}
   </div> 

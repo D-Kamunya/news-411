@@ -21,7 +21,6 @@ def category_news(category_name):
     View category news page function that returns the category-news page and its data for the category selected
     '''
     articles=get_category_news(category_name)
-    print(articles)
     return render_template('category-news.html',category_name=category_name,articles=articles)    
 
 
