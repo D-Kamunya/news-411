@@ -26,7 +26,10 @@ def category_news(category_name):
     View category news page function that returns the category-news page and its data for the category selected
     '''
     articles=get_category_news(category_name)
-    return render_template('category-news.html',category_name=category_name,articles=articles)    
+    if articles:
+        return render_template('category-news.html',category_name=category_name,articles=articles)
+    else:
+        return render_template('errors.html',error='article(s)')           
 
 
 @app.route('/source/<source_id>')
@@ -36,8 +39,10 @@ def source_news(source_id):
     View source news page function that returns the source-news page and its data for the source selected
     '''
     source_articles=get_source_news(source_id)
-    return render_template('source-news.html',articles=source_articles,source=source_id)        
-
+    if source_articles:
+        return render_template('source-news.html',articles=source_articles,source=source_id)        
+    else:
+        return render_template('errors.html',error='source articles')
 
 @app.route('/search/<news_article>')
 def search(news_article):
@@ -48,4 +53,7 @@ def search(news_article):
     search_news_format = "+".join(search_news_list)
     searched_news = search_news(search_news_format)
     title = f'search results for {news_article}'
-    return render_template('search-news.html',title=title,articles = searched_news)    
+    if searched_news:
+        return render_template('search-news.html',title=title,articles = searched_news)    
+    else:
+        return render_template('errors.html',error='searched articles')    
