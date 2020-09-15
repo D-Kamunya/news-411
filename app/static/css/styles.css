@@ -57,5 +57,9 @@
   text-transform: uppercase; 
   font-family: 'Helvetica Neue 45 Light', cursive;
 }
+.form-inline{
+  width: 50%;
+  margin:auto;
+}
 
 
