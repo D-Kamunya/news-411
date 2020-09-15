@@ -121,6 +121,24 @@ def get_category_news(category_name):
             
     return category_news_results
 
+def search_news(article_name):
+    '''
+    Function that gets the json response (i.e top headlines news by article searched) to our url request
+    '''
+    search_news_url = headlines_by_search_url.format(article_name,api_key)
+
+    with urllib.request.urlopen(search_news_url) as url:
+        search_news_data = url.read()
+        search_news_response = json.loads(search_news_data)
+
+        search_news_results = None
+
+        if search_news_response['articles']:
+            search_news_list =search_news_response['articles']
+            search_news_results = process_articles(search_news_list)
+            
+    return search_news_results    
+
 
 
 
