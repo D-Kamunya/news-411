@@ -1,4 +1,4 @@
-from flask import render_template
+from flask import render_template,request,redirect,url_for
 from app import app
 from .requests import get_sources,get_top_headlines,get_source_news,get_category_news,search_news
 
@@ -11,7 +11,12 @@ def index():
     '''
     news_sources = get_sources()
     top_headlines=get_top_headlines()[0:15]
-    return render_template('index.html',sources = news_sources,headlines = top_headlines)
+
+    search_article = request.args.get('news_query')
+    if search_article:
+        return redirect(url_for('search',news_article=search_article))
+    else:    
+        return render_template('index.html',sources = news_sources,headlines = top_headlines)
 
 
 @app.route('/category/<category_name>')
