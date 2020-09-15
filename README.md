@@ -12,7 +12,7 @@ nEws-411 V1.0
 
 ## Description
 An application which lists and previews news articles from various sources using the [News API](https://newsapi.org/), made by python web framework, Flask.A user can also search for their news articles using the application.
-The link to the live site is 
+The link to the live site is https://news-411.herokuapp.com/
 
 ## Features
 Here are the features in summary:
