@@ -13737,13 +13737,13 @@ fieldset[disabled] .form-group .form-control {
 
 .navbar .navbar-nav .nav-item .nav-link {
   position: relative;
-  color: inherit;
-  padding: 0.9375rem;
-  font-weight: 500;
-  font-size: 20px;
-  text-transform: uppercase;
   border-radius: 3px;
-  line-height: 20px;
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.8;
+  box-sizing: border-box;
+  font-weight: 300;
+  color: #fff;
 }
 
 .navbar .navbar-nav .nav-item .nav-link:not(.btn-just-icon) .fa {
