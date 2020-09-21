@@ -23,7 +23,7 @@
    <!-- Specific Page CSS goes HERE  -->
    {% block styles%}
    {% endblock styles%}
- 
+   <link rel="stylesheet" href="{{url_for('static',filename='css/blurry-load.min.css')}}" />
  </head>
  
  <body class="body">
@@ -46,8 +46,10 @@
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
    <!-- Specific Page JS goes HERE  -->
+  <script src="{{url_for('static',filename='js/blurry-load.min.js')}}"></script>
+  <script src="{{url_for('static',filename='js/base.js')}}"></script>
+  
    {% block scripts %}
-   <script src="{{url_for('static',filename='js/base.js')}}"></script>
    {% endblock scripts %}
    
  </body>

@@ -7,7 +7,7 @@
     <div class="row">
       <div class="col-md-6 offset-md-1 mx-3 my-3">
         <div class="view overlay">
-          <img class="img-fluid" src="{{article.article_img}}" alt="Card image cap">
+          <img class="blurry-load img-fluid" src="{{url_for('static',filename='img/article.jpg')}}" data-large="{{article.article_img}}" alt="Card image cap">
           <a href="#">
             <div class="mask rgba-white-slight waves-effect waves-light"></div>
           </a>
@@ -46,7 +46,7 @@
     <div class="row">
       <div class="col-md-6 offset-md-1 mx-3 my-3">
         <div class="view overlay">
-          <img style="height:50vh" class="img-fluid" src="{{article.article_img}}" alt="Card image cap">
+          <img style="height:50vh" class="img-fluid blurry-load" src="{{url_for('static',filename='img/article.jpg')}}" data-large="{{article.article_img}}" alt="Card image cap">
           <a href="#">
             <div class="mask rgba-white-slight waves-effect waves-light"></div>
           </a>

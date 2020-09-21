@@ -6,14 +6,17 @@
  box-sizing: border-box;
 }
 .header{
-  background: url("../img/bg.jpg")no-repeat center center;
-  background-size: cover;
+  background: #a4508b;
   min-height: 80vh;
   position: relative;
   width: 100%;
   overflow: hidden;
   display: block;
   font-size: 100%;
+}
+.header-bg{
+  background: url("../img/bg.jpg")no-repeat center center;
+  background-size: cover;
 }
 .wrap{
   font: 'opensans-bold', sans-serif;
