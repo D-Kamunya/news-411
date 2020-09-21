@@ -16,8 +16,7 @@
   font-size: 100%;
 }
 .wrap{
-  font: 22px 'opensans-bold', sans-serif;
-  display: block;
+  font: 'opensans-bold', sans-serif;
   width: 100%;
   margin: 0 auto;
 }

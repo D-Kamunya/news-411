@@ -3,7 +3,7 @@
 
 {%block content%}
 <div class="container-fluid ml-1 mr-0 mt-4">
-<h4 class="text-center display-4 mb-3"><strong>Top {{category_name.title()}} World News Headlines 
+<h3 class="text-center mb-3"><strong>Top {{category_name.title()}} World News Headlines 
   {% if category_name=='business'%}
     <i class="fa fa-briefcase" aria-hidden="true"></i>
   {%elif category_name=='entertainment'%}
@@ -20,7 +20,7 @@
     <i class="fa fa-microchip" aria-hidden="true"></i>
   {% endif %}  
   </strong>
-</h4>
+</h3>
   <div class="row">
     {{macro.displayArticleList(articles)}}
   </div> 

@@ -18,7 +18,13 @@
           <!-- Title -->
           <h3 class="card-title mb-1"><strong>{{article.title}}</strong></h3>
          <!-- Text -->
-          <p class="card-text">{{article.description}} </p>
+         {%if article.description%}
+         <p class="card-text">{{article.description }} </p>
+         {%elif article.content%}
+         <p class="card-text">{{article.content | truncate(120) }} </p>
+         {%else%}
+         <p class="card-text">Article has no details.Click Read more...</p>
+         {%endif%}
           <footer class="blockquote-footer">By <cite title="Source Title">{{article.author}}</cite>, {{article.published_at[:10]}}</footer>
           <a href="{{article.url}}"><button class="btn btn-primary">Read more...</button></a>
         </div>
@@ -51,7 +57,13 @@
           <!-- Title -->
           <h3 class="card-title mb-1"><strong>{{article.title}}</strong></h3>
          <!-- Text -->
+          {%if article.description%}
           <p class="card-text">{{article.description }} </p>
+          {%elif article.content%}
+          <p class="card-text">{{article.content | truncate(120) }} </p>
+          {%else%}
+          <p class="card-text">Article has no details.Click Read more...</p>
+          {%endif%}
           <footer class="blockquote-footer">By <cite title="Source Title">{{article.author}}</cite>, {{article.published_at[:10]}}</footer>
           <a href="{{article.url}}"><button class="btn btn-primary">Read more...</button></a>
         </div>
